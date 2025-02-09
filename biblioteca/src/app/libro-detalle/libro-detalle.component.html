@@ -1,1 +1,12 @@
-<p>libro-detalle works!</p>
+<h2>{{ libro?.titulo }}</h2>
+
+<div class="container" *ngIf="libro; else notFound">
+  <div><strong>ID:</strong> {{ libro.id }}</div>
+  <div><strong>Titulo:</strong> {{ libro.titulo }}</div>
+  <div><strong>Autor:</strong> {{ libro.autor }}</div>
+</div>
+
+<ng-template #notFound>
+  <p>Libro no encontrado</p>
+</ng-template>
+<button (click)="volver()" class="btn btn-primary">Volver a los libros</button>

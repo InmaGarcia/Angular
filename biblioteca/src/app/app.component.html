@@ -3,10 +3,11 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/home">Home</a>
-        <a class="nav-link" href="/libros">Libros</a>
-        <a class="nav-link" href="/contact">Contactos</a>
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
+        <a class="nav-link" [routerLink]="['/libros']">Libros</a>
+        <a class="nav-link" [routerLink]="['/contact']">Contactos</a>
       </div>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>
