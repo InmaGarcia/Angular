@@ -7,7 +7,6 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import { LibrosServiceTsService } from '../services/libros-service.ts.service';
-import id from '@angular/common/locales/id';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,7 +17,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './libro-detalle.component.css',
 })
 export class LibroDetalleComponent implements OnInit {
-  libro: Libro | undefined;
+  // libro: Libro | undefined;
+  libro?: Libro = { id: 0, titulo: '', autor: '' };
 
   constructor(
     private act: ActivatedRoute,

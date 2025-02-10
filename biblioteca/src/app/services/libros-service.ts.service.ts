@@ -40,4 +40,8 @@ export class LibrosServiceTsService {
   getLibro(id: number) {
     return this.librosList$.find((libro) => libro.id === id);
   }
+
+  subirLibro(libroNuevo: Libro): void {
+    this.librosList$.push(libroNuevo);
+  }
 }

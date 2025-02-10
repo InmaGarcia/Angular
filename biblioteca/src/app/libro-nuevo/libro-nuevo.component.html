@@ -1,0 +1,25 @@
+<h2>Agregar Libro</h2>
+<form style="width: 40%">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Titulo:</span>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      [(ngModel)]="titulo"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Autor:</span>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      [(ngModel)]="autor"
+    />
+  </div>
+  <button (click)="alta()" class="btn btn-primary">Añadir</button>
+  <button (click)="volver()" class="btn btn-primary">Volver</button>
+</form>

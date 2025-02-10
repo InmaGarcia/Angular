@@ -2,21 +2,25 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LibrosServiceTsService } from '../services/libros-service.ts.service';
 import { Libro } from '../model/libro.model';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-libros',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './libros.component.html',
   styleUrl: './libros.component.css',
 })
-export class LibrosComponent implements OnInit {
+export class LibrosComponent {
   libros: Libro[] = [];
-  constructor(private servicioLibro: LibrosServiceTsService) {}
-
-  ngOnInit(): void {
+  constructor(
+    private servicioLibro: LibrosServiceTsService,
+    private router: Router
+  ) {
     this.libros = this.servicioLibro.getLibros();
-    // throw new Error('Method not implemented.');
+  }
+
+  add() {
+    this.router.navigate(['/libroNuevo']);
   }
 }
