@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/usuario';
 import { UsuarioService } from '../services/usuario.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listado-usuarios',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './listado-usuarios.component.html',
   styleUrl: './listado-usuarios.component.css',
 })

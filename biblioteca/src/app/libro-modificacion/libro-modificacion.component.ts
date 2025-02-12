@@ -22,28 +22,27 @@ export class LibroModificacionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtener el ID del libro desde la ruta
+    // obtener el ID del libro desde ruts
     const id = Number(this.act.snapshot.params['id']);
-    // Obtener el libro del servicio
+    // obtener el libro del servicio
     let libroEncontrado = this.servicioLibro.getLibro(id);
-    console.log(libroEncontrado);
+    //console.log(libroEncontrado); comprobacion
     if (libroEncontrado) {
       this.libro = libroEncontrado;
     } else {
-      // Si no se encuentra el libro, redirigir al listado
+      // si no está el libro me redirige a la lista
       this.router.navigate(['/libros']);
     }
   }
 
   guardar(): void {
-    // Lógica para guardar los cambios del libro
+    // me lleva al metodo que cambia el libro
     this.servicioLibro.actualizarLibro(this.libro);
-    // Redirigir al listado de libros
+    // redirigea la lista
     this.router.navigate(['/libros']);
   }
 
   volver(): void {
-    // Redirigir al listado de libros
     this.router.navigate(['/libros']);
   }
 }

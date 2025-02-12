@@ -39,14 +39,19 @@ export class LibrosServiceTsService {
   }
 
   subirLibro(libroNuevo: Libro): void {
+    // subimos el libro nuevo a la lista
     this.librosList$.push(libroNuevo);
   }
 
   actualizarLibro(libroActualizado: Libro): void {
+    // buscamos el indice del libro actualizado
     const indice = this.librosList$.findIndex(
       (libro) => libro.id === libroActualizado.id
     );
+    //si existe ¿se hacen estas comprobaciones en angular?
     if (indice) {
+      //cojo el elemnto de la lsita con ese indice
+      //e injecto el nuevo
       this.librosList$[indice] = libroActualizado;
     }
   }

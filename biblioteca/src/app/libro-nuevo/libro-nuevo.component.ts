@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class LibroNuevoComponent {
   lista: Libro[] = [];
-  libroNuevo: Libro = { id: 0, titulo: '', autor: '' };
   titulo: string = '';
   autor: string = '';
   id: number = 0;
@@ -24,10 +23,19 @@ export class LibroNuevoComponent {
     private router: Router
   ) {}
   alta() {
+    //traigo la lista
     this.lista = this.servicioLibro.getLibros();
-    this.id = Number(this.lista.length);
-    this.libroNuevo = { id: this.id, titulo: this.titulo, autor: this.autor };
-    this.servicioLibro.subirLibro(this.libroNuevo);
+    //el id del nuevo libro es la longitud de a lista +1
+    this.id = Number(this.lista.length + 1);
+    //creo el nuevo libro
+    const libroNuevo: Libro = {
+      id: this.id,
+      titulo: this.titulo,
+      autor: this.autor,
+    };
+    console.log(libroNuevo);
+    //lamo al servicio y le envio el libro nuevo
+    this.servicioLibro.subirLibro(libroNuevo);
     this.router.navigate(['/libros']);
   }
   volver() {

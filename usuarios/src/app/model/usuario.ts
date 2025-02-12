@@ -3,10 +3,21 @@ export interface Usuario {
   name: string;
   username: string;
   email: string;
-  address: Detalles;
-}
-
-export interface Detalles {
-  street: string;
-  city: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
 }

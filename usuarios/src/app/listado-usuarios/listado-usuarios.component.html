@@ -1,10 +1,9 @@
 <h2>Lista de Usuarios</h2>
 
-<span *ngFor="let usuario of usuarios$ | async">
-  <strong> {{ usuario.name }}</strong> ({{ usuario.username }})
-  <br />
-  Email: {{ usuario.email }}
-  <br />
-  Dirección: {{ usuario.address.street }}, {{ usuario.address.city }}
-  <hr />
-</span>
+<ul class="list-group" *ngFor="let usuario of usuarios$ | async">
+  <li class="list-group-item">
+    <a [routerLink]="['/detalle', usuario.id]">
+      {{ usuario.id }} - {{ usuario.name }} {{ usuario.username }}</a
+    >
+  </li>
+</ul>
