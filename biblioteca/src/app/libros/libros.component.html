@@ -3,6 +3,8 @@
   <li class="list-group-item" *ngFor="let libro of libros">
     <a [routerLink]="['/libro', libro.id]">
       {{ libro.id }} - {{ libro.titulo }}</a
+    ><a [routerLink]="['/modiff', libro.id]">
+      <span class="material-icons"> description </span></a
     >
   </li>
 </ul>

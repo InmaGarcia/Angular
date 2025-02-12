@@ -1,0 +1,27 @@
+<h2>Modificar Libro</h2>
+<form style="width: 40%">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Titulo:</span>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      [(ngModel)]="libro.titulo"
+      name="titulo"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Autor:</span>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default"
+      [(ngModel)]="libro.autor"
+      name="autor"
+    />
+  </div>
+  <button (click)="guardar()" class="btn btn-light">Guardar Cambios</button>
+  <button (click)="volver()" class="btn btn-light">Volver</button>
+</form>

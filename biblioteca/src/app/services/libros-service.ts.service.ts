@@ -6,9 +6,6 @@ import { Libro } from '../model/libro.model';
   providedIn: 'root',
 })
 export class LibrosServiceTsService {
-  volver(): Libro | undefined {
-    throw new Error('Method not implemented.');
-  }
   private librosList$: Libro[] = [
     {
       id: 1,
@@ -43,5 +40,14 @@ export class LibrosServiceTsService {
 
   subirLibro(libroNuevo: Libro): void {
     this.librosList$.push(libroNuevo);
+  }
+
+  actualizarLibro(libroActualizado: Libro): void {
+    const indice = this.librosList$.findIndex(
+      (libro) => libro.id === libroActualizado.id
+    );
+    if (indice) {
+      this.librosList$[indice] = libroActualizado;
+    }
   }
 }
