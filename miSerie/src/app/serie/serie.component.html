@@ -1,0 +1,14 @@
+<table>
+  <tr *ngIf="serie$ | async as serie">
+    <td><img [src]="serie.image.original" /></td>
+    <td>
+      <h2>{{ serie.name }}</h2>
+      <p><b>Idioma:</b>{{ serie.language }}</p>
+      <p><b>Generos:</b></p>
+      <ul>
+        <li *ngFor="let genero of serie.genres">{{ genero }}</li>
+      </ul>
+      <p [innerHTML]="serie.summary"></p>
+    </td>
+  </tr>
+</table>

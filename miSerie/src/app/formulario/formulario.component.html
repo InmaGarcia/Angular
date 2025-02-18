@@ -1,0 +1,16 @@
+<h1>Formulario Valoración</h1>
+<form>
+  <label>Serie</label><br />
+  <input type="text" [(ngModel)]="serie" name="serie" /><br />
+  <label>Correo</label><br />
+  <input type="email" [(ngModel)]="email" name="email" /><br />
+  <label>Nombre</label><br />
+  <input type="text>" [(ngModel)]="nombre" name="nombre" /><br /><br />
+
+  <button type="submit" (click)="resumen()">Enviar</button><br />
+</form>
+<p [ngClass]="rojo" *ngIf="error">{{ mensajeError }}</p>
+
+<ng-template *unless="error">
+  <app-resumen [serie]="serie" [nombre]="nombre" [email]="email"></app-resumen>
+</ng-template>
