@@ -9,8 +9,15 @@
 
   <button type="submit" (click)="resumen()">Enviar</button><br />
 </form>
-<p [ngClass]="rojo" *ngIf="error">{{ mensajeError }}</p>
+<p [ngClass]="{ rojo: error == true }">{{ mensajeError }}</p>
+<h1 [ngClass]="{ verde: valor !== '' }" *ngIf="valor !== ''">
+  Gracias {{ nombre }}, por su valoración: {{ valor }}
+</h1>
 
-<ng-template *unless="error">
-  <app-resumen [serie]="serie" [nombre]="nombre" [email]="email"></app-resumen>
-</ng-template>
+<app-resumen
+  *ngIf="mostrarResumen"
+  [serie]="serie"
+  [nombre]="nombre"
+  [email]="email"
+  (selected)="valoracion($event)"
+></app-resumen>

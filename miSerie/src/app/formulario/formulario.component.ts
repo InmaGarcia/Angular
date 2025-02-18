@@ -16,15 +16,21 @@ export class FormularioComponent {
 
   nombre: string = '';
   mensajeError: string = '';
-  rojo: string = 'rojo';
   error: boolean = false;
+  mostrarResumen: boolean = false;
   resumen() {
-    if (this.email === '') {
+    if (this.email == '') {
       this.mensajeError = 'Por favor, introduce el correo.';
       this.error = true;
     } else {
       this.mensajeError = '';
       this.error = false;
+      this.mostrarResumen = true;
     }
+  }
+
+  valor: string = '';
+  valoracion(event: string) {
+    this.valor = event;
   }
 }
